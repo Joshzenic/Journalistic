@@ -28,4 +28,8 @@ Non-neutral punctuation (! and ?) add or minus 1 depending on month.
 Neutral words print the current cell contents to console.
 Neutral words in brackets print the current cell contents as an ASCII character to the console.
 
+If you need examples for code:
+- **count.txt**
+- **hello.txt**
+
 Have fun!
