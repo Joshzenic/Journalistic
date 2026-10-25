@@ -167,7 +167,6 @@ def run(code, loop=False, date=""):
     entry = " ".join(lines).replace("".join(lines[0]), "").split(" ")
     count = 0
     if len(date) != 3:
-        print(date)
         error("I can't really imagine a date that doesn't have exactly 3 parameters, can you?")
         return output
     else:
