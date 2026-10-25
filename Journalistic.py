@@ -291,9 +291,9 @@ if not file.endswith(".txt"):
 try:
     with open(file, "r") as f:
         code = str(f.read()).lower()
+    print(run(code))
 except Exception as e:
     print(f"Cannot find path: {file}")
     print(f"Returned: {e}")
-
-print(run(code))
+    
 input("Press enter to continue...")
