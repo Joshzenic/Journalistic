@@ -27,7 +27,7 @@ Negative words minus 1 from the current cell.
 Non-neutral punctuation (! and ?) add or minus 1 depending on month.
 Neutral words print the current cell contents to console.
 Neutral words in brackets print the current cell contents as an ASCII character to the console.
-Finishing words prepare the parser for another entry.
+Finishing words prepare the parser for another entry. DO NOT use at the end of a script when there are no more entries to parse.
 
 *Note: the parser gets kind of finicky with multiple entries.*
 
