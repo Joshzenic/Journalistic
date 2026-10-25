@@ -4,7 +4,7 @@ Uses cells as memory and you can use entries to manipulate cells and their conte
 
 Keywords and phrases:
 - Again
-is a loop, by default will loop the rest of the code until count = 0.
+is a repeat until loop, by default will loop the rest of the code until count = 0.
 - Again, at HH:MM
 is the standard Again keyword but it loops with the specified time:
 1. Odd but composite hour <
