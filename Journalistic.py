@@ -49,7 +49,7 @@ pos = [
     "healthy",
     "dog",
     "cat",
-    "cuteness"
+    "cuteness",
     "pet",
     ]
 
