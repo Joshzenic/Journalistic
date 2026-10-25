@@ -27,6 +27,9 @@ Negative words minus 1 from the current cell.
 Non-neutral punctuation (! and ?) add or minus 1 depending on month.
 Neutral words print the current cell contents to console.
 Neutral words in brackets print the current cell contents as an ASCII character to the console.
+Finishing words prepare the parser for another entry.
+
+*Note: the parser gets kind of finicky with multiple entries.*
 
 If you need examples for code:
 - **count.txt**
