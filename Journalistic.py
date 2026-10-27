@@ -115,6 +115,17 @@ neut_ascii = [
     "(good-ish)",
     ]
 
+neut_cell = [
+    "*okay",
+    "*neutral",
+    "*manageable",
+    "*fine",
+    "*alright",
+    "*ok",
+    "*kay",
+    "*good-ish",
+    ]
+
 ascii_list = [
     # 0 - 15
     '[NULL]', '[SOH]', '[STX]', '[ETX]', '[EOT]', '[ENQ]', '[ACK]', '[BELL]', 
@@ -166,6 +177,7 @@ def run(code, loop=False, date=""):
         date = lines[0].split("/")
     entry = " ".join(lines).replace("".join(lines[0]), "").split(" ")
     count = 0
+    cellop = 0
     if len(date) != 3:
         error("I can't really imagine a date that doesn't have exactly 3 parameters, can you?")
         return output
@@ -197,10 +209,14 @@ def run(code, loop=False, date=""):
             count = base_val
     for idx, i in enumerate(entry):
         iC = i.replace("!", "").replace("?", "").replace(",", "").replace(".", "").replace(":", "").replace(";", "").replace("\"", "").replace("'", "")
-        if iC in pos:
+        if iC in pos and cellop == 0:
             count +=1
-        if iC in neg:
+        elif iC in pos and cellop == 1:
+            cell +=1
+        if iC in neg and cellop == 0:
             count -=1
+        elif iC in neg and cellop == 1:
+            cell -=1
         if iC in ["same", "identical", "similar", "equal"] and entry[idx + 1] in ["as", "to"]:
             try:
                 count = cells[int(entry[idx + 2].replace(".", ""))]
@@ -261,6 +277,11 @@ def run(code, loop=False, date=""):
             else:
                 error("You really decided to give the silent treatment? Really?")
                 break
+        if iC in ["perspective", "perspectives", "opinion", "view"]:
+            if cellop == 0:
+                cellop = 1
+            else:
+                cellop = 0
         if i.count("!") != 0 or i.count("?") != 0:
             if not op % 2 == 0:
                 count +=1
@@ -278,6 +299,12 @@ def run(code, loop=False, date=""):
                     break
             except Exception as e:
                 error("I'm struggling to understand how you can try to print an ASCII character that doesn't exist.")
+                break
+        elif iC in neut_cell:
+            try:
+                print(cell)
+            except:
+                error("You really tried to print a cell that doesn't exist? How does that even happen??")
                 break
         if iC in fin:
             run("".join(code.split(i)[1]).strip())
