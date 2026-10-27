@@ -14,6 +14,10 @@ is the standard Again keyword but it loops with the specified time:
 the minute provided is the number being compared to the current cell contents
 - Remember
 this one prompt the user a number, and adds that number to the current cell contents.
+- Perspective
+changes the operator mode for cell modification on words.
+default operator is cell content manipulation
+use this keyword to toggle between 0 and 1 (cell content/cell number)
 - DD/MM/YYYY
 the timestamp at the start of each entry.
 1. Day = cell
