@@ -38,5 +38,6 @@ Finishing words prepare the parser for another entry. DO NOT use at the end of a
 If you need examples for code:
 - **count.txt**
 - **hello.txt**
+- **adder.txt**
 
 Have fun!
